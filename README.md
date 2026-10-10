@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Credit Card Fraud Detector
 
 A browser-only behavioral anomaly detection prototype for the college problem statement: **“Implement an anomaly detection model that flags suspicious financial transactions by comparing them against historical user spending patterns.”**
@@ -48,4 +48,4 @@ This static Vite app is Vercel-ready. In this directory run `npx vercel --prod`,
 This demo uses fictional records and local browser persistence. Real fraud systems additionally use supervised models, streaming features, device intelligence, secure identity controls, human review, monitoring, privacy controls, and much larger datasets.
 =======
 # Credit_Card_Fraud_Detector
->>>>>>> fbf8448471614850e57b0d5f33664426757e4086
+
