@@ -4,7 +4,7 @@ import { analyze, profileFor } from './lib/engine'
 import type { AlertStatus, Analysis, CardUser, Transaction } from './types'
 const Glyph=({children}:{children:string})=><span className="glyph" aria-hidden="true">{children}</span>
 const AlertTriangle=()=> <Glyph>!</Glyph>, BarChart3=()=> <Glyph>▥</Glyph>, FileUp=()=> <Glyph>↑</Glyph>, LayoutDashboard=()=> <Glyph>▦</Glyph>, RefreshCw=()=> <Glyph>↻</Glyph>, Search=()=> <Glyph>⌕</Glyph>, ShieldCheck=()=> <Glyph>◈</Glyph>, Users=()=> <Glyph>◉</Glyph>, X=(props:HTMLAttributes<HTMLSpanElement>)=> <span {...props} className={`glyph ${props.className||''}`} aria-hidden="true">×</span>
-const key='fraud-demo-transactions-v1', money=(n:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n), badge=(l?:string)=>`badge ${l?.toLowerCase()}`
+const key='fraud-demo-transactions-v1', currencyFormatter=new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR" }), money=(n:number)=>currencyFormatter.format(n), badge=(l?:string)=>`badge ${l?.toLowerCase()}`
 const empty=():Transaction=>({transactionId:`NEW-${Date.now()}`,userId:'u001',timestamp:new Date().toISOString().slice(0,16),amount:45,currency:'USD',merchant:'FreshMart',merchantCategory:'Grocery',country:'India',device:'iPhone 15',paymentMethod:'Card',status:'Pending'})
 const cardKey='fraud-demo-card-users-v1'
 const demoCardUsers:CardUser[]=[{userId:'u001',name:'Maya Patel',email:'maya@example.demo',creditLimit:6000,demoCard:'DEMO-4921-8047-1138',expiry:'09/29'},{userId:'u002',name:'Arjun Mehta',email:'arjun@example.demo',creditLimit:3500,demoCard:'DEMO-6048-2193-5570',expiry:'03/30'},{userId:'u003',name:'Sara Khan',email:'sara@example.demo',creditLimit:9000,demoCard:'DEMO-7381-4960-2204',expiry:'12/29'}]
